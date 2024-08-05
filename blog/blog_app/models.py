@@ -20,7 +20,7 @@ class Event(models.Model):
     published_date = models.DateTimeField(auto_now_add=True)
     start_date = models.DateTimeField(null=True, blank=True)
     end_date = models.DateTimeField(null=True, blank=True)
-    image = models.ImageField(upload_to='events.html/', null=False)
+    image = models.ImageField(upload_to='events/', null=False)
 
     def __str__(self):
         return self.title
