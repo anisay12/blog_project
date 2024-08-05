@@ -8,7 +8,7 @@ def home(request):
 
 
 def posts(request):
-    return render(request, 'postshtml', {})
+    return render(request, 'posts.html', {})
 
 
 def events(request):
