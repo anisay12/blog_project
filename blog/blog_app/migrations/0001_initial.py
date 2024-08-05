@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('email', models.EmailField(max_length=254)),
-                ('request_type', models.CharField(choices=[('contact', 'Contact'), ('bug', 'Remontée de bug')], max_length=50)),
+                ('request_type', models.CharField(choices=[('contact.html', 'Contact'), ('bug', 'Remontée de bug')], max_length=50)),
                 ('message', models.TextField()),
             ],
         ),
@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
                 ('published_date', models.DateTimeField(auto_now_add=True)),
                 ('start_date', models.DateTimeField(blank=True, null=True)),
                 ('end_date', models.DateTimeField(blank=True, null=True)),
-                ('image', models.ImageField(upload_to='events/')),
+                ('image', models.ImageField(upload_to='events.html/')),
             ],
         ),
         migrations.CreateModel(
