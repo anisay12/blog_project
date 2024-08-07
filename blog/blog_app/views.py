@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.shortcuts import render, redirect
 from .models import Post, Event, Contact
 from django.views.generic import ListView, DetailView
@@ -35,9 +34,9 @@ class EventDetailView(DetailView):
     template_name = 'event_detail.html'
 
 
-class ContactView(ListView):
-    model = Contact
-    template_name = 'contact.html'
+#class ContactView(ListView):
+ #   model = Contact
+  #  template_name = 'contact.html'
 
 
 class PostViewSet(viewsets.ModelViewSet):
@@ -56,6 +55,19 @@ class ContactViewSet(viewsets.ModelViewSet):
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
     permission_classes = [IsAuthenticated]
+
+
+def contact(request):
+    if request.method == 'POST':
+        email = request.POST['message-email']
+        option = request.POST.get('option')
+        message = request.POST['message']
+        new_contact = Contact(email=email, request_type=option, message=message)
+        new_contact.save()
+        return render(request, 'contact.html', {'email': email})
+
+    else:
+        return render(request, 'contact.html', {})
 
 
 
