@@ -3,7 +3,7 @@ from django.urls import path
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import HomeView, PostView, PostDetailView, EventDetailView, EventView, ContactView, PostViewSet, EventViewSet, ContactViewSet
+from .views import HomeView, PostView, PostDetailView, EventDetailView, EventView, PostViewSet, EventViewSet, ContactViewSet
 from rest_framework.routers import DefaultRouter
 from django.conf.urls import include
 app_name = 'blog_app'
@@ -21,7 +21,7 @@ urlpatterns = [
     path('post_detail/<int:pk>', PostDetailView.as_view(), name="post_detail"),
     path('events/', EventView.as_view(), name="event"),
     path('event_detail/<int:pk>', EventDetailView.as_view(), name="event_detail"),
-    path('contact/', ContactView.as_view(), name="contact"),
+    path('contact/', views.contact, name="contact"),
     path('api/', include(router.urls)),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
