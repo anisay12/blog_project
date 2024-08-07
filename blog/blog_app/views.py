@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import render, redirect
 from .models import Post, Event, Contact
 from django.views.generic import ListView, DetailView
-
+from .serializers import PostSerializer, EventSerializer, ContactSerializer
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
 
@@ -38,6 +38,24 @@ class EventDetailView(DetailView):
 class ContactView(ListView):
     model = Contact
     template_name = 'contact.html'
+
+
+class PostViewSet(viewsets.ModelViewSet):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    permission_classes = [IsAuthenticated]
+
+
+class EventViewSet(viewsets.ModelViewSet):
+    queryset = Event.objects.all()
+    serializer_class = EventSerializer
+    permission_classes = [IsAuthenticated]
+
+
+class ContactViewSet(viewsets.ModelViewSet):
+    queryset = Contact.objects.all()
+    serializer_class = ContactSerializer
+    permission_classes = [IsAuthenticated]
 
 
 
