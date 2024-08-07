@@ -1,6 +1,7 @@
 import os
 from os.path import join
 from pathlib import Path
+import environ
 import rest_framework
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -70,6 +71,12 @@ REST_FRAMEWORK = {
 }
 
 WSGI_APPLICATION = 'blog.wsgi.application'
+
+env = environ.Env()
+environ.Env.read_env()
+
+SECRET_KEY = env('SECRET_KEY', default='blog-secret-key')
+DEBUG = env.bool('DEBUG', default=True)
 
 
 # Database
