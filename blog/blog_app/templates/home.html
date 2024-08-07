@@ -24,6 +24,8 @@
                         <li class="nav-item"><a class="nav-link" href="/posts/">Articles</a></li>
                         <li class="nav-item"><a class="nav-link" href="/events/">Evènements</a></li>
                         <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/login/">Logout</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -32,7 +34,7 @@
         <header class="py-5 bg-light border-bottom mb-4">
             <div class="container">
                 <div class="text-center my-5">
-                    <h1 class="fw-bolder">Bienvenue dans note blog !</h1>
+                    <h1 class="fw-bolder">Bienvenue sur note blog !</h1>
                 </div>
             </div>
         </header>
@@ -46,7 +48,7 @@
                             <!-- Blog post-->
                             <div class="card mb-4">
                                 {% for post in object_list %}
-                                <a href="#!"><img class="card-img-top" src="{{ post.image.url }}" alt="{{ post.title }}" /></a>
+                                <a href="#!"><img class="card-img-top" src="{{ post.image.url }}" alt="{{ post.title }}" style="height: 850px; width:1250px" /></a>
                                 <div class="card-body">
                                     <div class="small text-muted">{{ post.published_date }}</div>
                                     <h2 class="card-title h4">{{ post.title }}</h2>

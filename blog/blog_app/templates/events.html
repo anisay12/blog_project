@@ -24,6 +24,8 @@
                         <li class="nav-item"><a class="nav-link" href="/posts/">Articles</a></li>
                         <li class="nav-item"><a class="nav-link" href="/events/">Evènements</a></li>
                         <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/login/">Logout</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -44,7 +46,7 @@
                     <!-- Featured blog post-->
                     <div class="card mb-4">
                         {% for event in object_list %}
-                        <img class="card-img-top" src="{{ event.image.url }}" alt="{{ event.title }}"/>
+                        <img class="card-img-top" src="{{ event.image.url }}" alt="{{ event.title }}" style="height: 500px"/>
                         <div class="card-body">
                             <div class="small text-muted">De : {{ event.start_date }}</div>
                             <div class="small text-muted">A : {{ event.end_date }}</div>
