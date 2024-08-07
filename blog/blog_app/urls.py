@@ -18,6 +18,7 @@ router.register(r'contacts', ContactViewSet)
 urlpatterns = [
     #path('', HomeView.as_view(), name="home"),
     path('', views.login_view, name='login'),
+    path('login/', views.login_view, name='login'),
     path('home/', HomeView.as_view(), name="home"),
     path('posts/', PostView.as_view(), name="post"),
     path('post_detail/<int:pk>', PostDetailView.as_view(), name="post_detail"),

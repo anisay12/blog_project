@@ -24,6 +24,8 @@
                         <li class="nav-item"><a class="nav-link" href="/posts/">Articles</a></li>
                         <li class="nav-item"><a class="nav-link" href="/events/">Evènements</a></li>
                         <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/login/">Logout</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -36,6 +38,7 @@
                 </div>
             </div>
         </header>
+        <div class="col-lg-8">
             <form action="{% url 'blog_app:contact' %}" method="post">
                 {% csrf_token %}
                 <div>
@@ -58,6 +61,7 @@
           <button class="btn btn-primary" type="submit">Envoyez</button>
         </div>
             </form>
+        </div>
 
 
                 <!-- Footer-->
