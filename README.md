@@ -49,7 +49,7 @@ La documentation de l'API est générée avec `drf_yasg`.
 
 ## Utilisation
 
-Accédez à l'interface d'administration à http://127.0.0.1:8000/admin/ pour gérer les articles, les événements et les contacts.  
+Accédez à l'interface d'administration à http://127.0.0.1:8000/admin/ pour gérer les articles, les événements, les contacts et les utilisateurs.  
 Accédez aux différentes sections du site :  
 Page d'acceuil : http://127.0.0.1:8000/home/  
 Articles : http://127.0.0.1:8000/articles/  
