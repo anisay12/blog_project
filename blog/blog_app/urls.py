@@ -3,7 +3,8 @@ from django.urls import path
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import HomeView, PostView, PostDetailView, EventDetailView, EventView, PostViewSet, EventViewSet, ContactViewSet
+from .views import HomeView, PostView, PostDetailView, EventDetailView, EventView, PostViewSet, EventViewSet, \
+    ContactViewSet, login_view
 from rest_framework.routers import DefaultRouter
 from django.conf.urls import include
 app_name = 'blog_app'
@@ -15,7 +16,8 @@ router.register(r'events', EventViewSet)
 router.register(r'contacts', ContactViewSet)
 
 urlpatterns = [
-    path('', HomeView.as_view(), name="home"),
+    #path('', HomeView.as_view(), name="home"),
+    path('', views.login_view, name='login'),
     path('home/', HomeView.as_view(), name="home"),
     path('posts/', PostView.as_view(), name="post"),
     path('post_detail/<int:pk>', PostDetailView.as_view(), name="post_detail"),

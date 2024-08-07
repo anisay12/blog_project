@@ -44,6 +44,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'blog.urls'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 TEMPLATES = [
     {
